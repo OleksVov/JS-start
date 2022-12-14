@@ -25,11 +25,32 @@ console.log('Hello world!');
 // let result = makeMessage ("Droid", 6150);
 // console.log(result);
 
-function makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) {
+// function makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) {
 
-  const totalPrice = orderedQuantity * pricePerDroid + deliveryFee;
-  const message = `You ordered droids worth ${totalPrice} credits. Delivery (${deliveryFee} credits) is included in total price.`
+//   const totalPrice = orderedQuantity * pricePerDroid + deliveryFee;
+//   const message = `You ordered droids worth ${totalPrice} credits. Delivery (${deliveryFee} credits) is included in total price.`
 
-    return message;
-  }
-console.log(makeOrderMessage(2, 100, 50));
+//     return message;
+//   }
+// console.log(makeOrderMessage(2, 100, 50));
+
+// function checkStorage(available, ordered) {
+//   let message;
+//   // Change code below this line
+//   if(ordered > available){message="Not enough goods in stock!";} else {message="Order is processed, our manager will contact you.";}
+
+//   // Change code above this line
+//   return message;
+// }
+// console.log(checkStorage(100, 50));
+
+function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
+  let message;
+  // Change code below this line
+  const totalPrice= pricePerDroid * orderedQuantity;
+  if(totalPrice > customerCredits){message= "Insufficient funds!";} else {message= `You ordered ${orderedQuantity} droids, you have ${customerCredits - totalPrice} credits left`;}
+
+  // Change code above this line
+  return message;
+}
+console.log(makeTransaction(3000, 5, 23000));
