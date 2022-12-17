@@ -86,16 +86,20 @@ console.log('Hello world!');
 // }
 // console.log(getDiscount(6000));
 
-function formatMessage(message, maxLength) {
-  let result;
-  // Change code below this line
-  if (message.length <= maxLength) {
-    result = message
-  } else  {
-    result = (message.slice(0, maxLength)) + '...'
-  }
+// Task Length message
 
-  /// Change code above this line
-  return result;
-}
-console.log(formatMessage("Curabitur ligula sapien", 16));
+// function formatMessage(message, maxLength) {
+//   let result;
+//   // Change code below this line
+//   if (message.length <= maxLength) {
+//     result = message
+//   } else  {
+//     result = (message.slice(0, maxLength)) + '...'
+//   }
+
+//   /// Change code above this line
+//   return result;
+// }
+// console.log(formatMessage("Curabitur ligula sapien", 16));
+
+
