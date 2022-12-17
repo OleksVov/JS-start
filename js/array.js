@@ -35,7 +35,6 @@
 //     totalCarts +=carts[i];
 // }
 // console.log('Total= ', totalCarts);
-
 // task2 even numbers
 
 // const numbers = [1, 4, 5, 6, 10, 11];
@@ -56,8 +55,8 @@
 
 // task3 login search
 
-const logins = ['poly', 'kiwi', 'mango'];
-const loginToFind = 'pol';
+// const logins = ['poly', 'kiwi', 'mango'];
+// const loginToFind = 'pol';
 
 // Variant1
 // let message = `login ${loginToFind} not found`;
@@ -68,5 +67,69 @@ const loginToFind = 'pol';
 //     }
 // }
 // Variant2
-const message = logins.includes(loginToFind) ? `login ${loginToFind} found` : `login ${loginToFind} not found`;
-console.log(message);
+// const message = logins.includes(loginToFind) ? `login ${loginToFind} found` : `login ${loginToFind} not found`;
+// console.log(message);
+
+// task 3 Find more small number
+// const numbers = [33, 17, 9, 12, 3, 54];
+// let smallestNumber = numbers[0];
+// for(const number of numbers){
+//     if(number < smallestNumber){
+//         smallestNumber = number;
+//     }
+// }
+// console.log(smallestNumber);
+
+// let biggestNumber = numbers[0];
+// for(const number of numbers){
+//     if(number > biggestNumber){
+//         biggestNumber = number;
+//     }
+// }
+// console.log(biggestNumber);
+
+// task4 объединение элементов мвсива в строковое значение
+// const fruits = ['Mango', 'Poly','Kiwi'];
+// const string = fruits.join(', ');
+// console.log(string);
+
+// task5 replace "JavaScript" on "jAVAsCRIPT" 
+// const string = 'JavaScript';
+// const letters = string.split('');
+// let invertedString = '';
+// for(const letter of letters){
+//     const isEqual = letter === letter.toLowerCase();
+//     invertedString +=isEqual ? letter.toUpperCase() : letter.toLowerCase();
+// }
+// console.log(invertedString);
+
+// task5 method splice
+
+// const cards = ['card-1', 'card-2', 'card-3', 'card-4'];
+// const cardToRemove = 'card-3';
+// const cardIndex = cards.indexOf(cardToRemove);
+// cards.splice(cardIndex, 1);
+// // add card
+// const cardToInsert = 'card-6';
+// cards.splice(2, 0, cardToInsert);
+// // replace card
+// const cardToReplace = 'card-15';
+// cards.splice(0, 1, cardToReplace);
+// console.log(cards);
+
+// pop push
+
+// const numbers = [1, 5];
+// numbers.push(4, 6);
+// numbers.pop();
+// numbers.unshift(13, 17);
+// numbers.shift();
+// console.log(numbers);
+
+
+
+
+
+
+
+
