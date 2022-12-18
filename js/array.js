@@ -35,6 +35,7 @@
 //     totalCarts +=carts[i];
 // }
 // console.log('Total= ', totalCarts);
+
 // task2 even numbers
 
 // const numbers = [1, 4, 5, 6, 10, 11];
@@ -157,15 +158,34 @@
 
 // task 16 Homework
 
-function makeArray(firstArray, secondArray, maxLength) {
-    let newArray
-    newArray = firstArray.concat(secondArray);
-    if(newArray.length <= maxLength){
-        return newArray;
-    }
-    return  newArray.slice(0, maxLength);
+// function makeArray(firstArray, secondArray, maxLength) {
+//     let newArray
+//     newArray = firstArray.concat(secondArray);
+//     if(newArray.length <= maxLength){
+//         return newArray;
+//     }
+//     return  newArray.slice(0, maxLength);
+//   }
+//   let result = makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3);
+//   console.log(result);
+
+// task 22 Homework
+
+function findLongestWord(string) {
+
+    let stringArrays;
+    stringArrays = string.split(" ");
+    let biggerWord = stringArrays[0];
+
+
+for(const stringArray of stringArrays){
+    if (stringArray.length > biggerWord.length){
+        biggerWord = stringArray;
+    } 
+}
+
+ return biggerWord;
+
   }
-  let result = makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3);
+  let result = findLongestWord("May the force be with you");
   console.log(result);
-
-
