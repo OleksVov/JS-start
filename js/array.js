@@ -126,10 +126,46 @@
 // numbers.shift();
 // console.log(numbers);
 
+// task 11 Homework
+// function calculateEngravingPrice(message, pricePerWord) {
+//  let totalPrice;
+//  totalPrice = message.split(" ").length * pricePerWord;
+//  return totalPrice;
+//  }
+//  let result = calculateEngravingPrice('JavaScript is in my blood', 20);
+//  console.log(result);
 
+// task 12 Homework
 
+// function makeStringFromArray(array, delimiter) {
+//     let string;
+//   string = array.join(delimiter);
+//     return string;
+//   }
+//   let result = makeStringFromArray(["Mango", "hurries", "to", "the", "train"], " ");
+//    console.log(result);
 
+// task 13 Homework
 
+// function slugify(title) {
+// let slug;
+//   slug = title.toLowerCase().split(" ").join("-");
+//     return slug;
+//   }
+//   let result = slugify('Ten secrets of JavaScript');
+//   console.log(result);
 
+// task 16 Homework
+
+function makeArray(firstArray, secondArray, maxLength) {
+    let newArray
+    newArray = firstArray.concat(secondArray);
+    if(newArray.length <= maxLength){
+        return newArray;
+    }
+    return  newArray.slice(0, maxLength);
+  }
+  let result = makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3);
+  console.log(result);
 
 
