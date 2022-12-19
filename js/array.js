@@ -171,21 +171,57 @@
 
 // task 22 Homework
 
-function findLongestWord(string) {
+// function findLongestWord(string) {
 
-    let stringArrays;
-    stringArrays = string.split(" ");
-    let biggerWord = stringArrays[0];
+//     let stringArrays;
+//     stringArrays = string.split(" ");
+//     let biggerWord = stringArrays[0];
 
 
-for(const stringArray of stringArrays){
-    if (stringArray.length > biggerWord.length){
-        biggerWord = stringArray;
-    } 
-}
+// for(const stringArray of stringArrays){
+//     if (stringArray.length > biggerWord.length){
+//         biggerWord = stringArray;
+//     } 
+// }
 
- return biggerWord;
+//  return biggerWord;
 
+//   }
+//   let result = findLongestWord("May the force be with you");
+//   console.log(result);
+
+//   task 23
+
+// function filterArray(numbers, value){
+// let newNumbers = [];
+
+// for ( const number of numbers) {
+//   if (number > value) {
+//     newNumbers.push(number);
+//      }
+//  }
+// Variant 2
+// for (let i = 0; i < numbers.length; i += 1) {
+
+//     if (numbers[i] > value) {
+//         newNumbers.push(numbers[i]);
+//     }
+//   }
+//  return newNumbers;
+// }
+
+// let result = filterArray([12, 24, 8, 41, 76], 20);
+// console.log(result);
+
+// task32
+function includes(array, value) {
+    // Change code below this line
+  for (const item of array) {
+    if (item === value) {
+        return true;
+    }
   }
-  let result = findLongestWord("May the force be with you");
-  console.log(result);
+  return false;
+    // Change code above this line
+  }
+  console.log(includes([1, 2, 3, 4, 5], 17));
