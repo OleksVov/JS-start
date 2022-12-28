@@ -125,20 +125,79 @@
   // Напиши функцию calculateTotalPrice(productName) которая принимает один параметр productName - название товара.
   //  Функция должна вернуть общую стоимость (цена * количество) товара с таким именем из массива products.
 
-  const products = [
-    { name: "Radar", price: 1300, quantity: 4 },
-    { name: "Scanner", price: 2700, quantity: 3 },
-    { name: "Droid", price: 400, quantity: 7 },
-    { name: "Grip", price: 1000, quantity: 9 },
-  ];
+//   const products = [
+//     { name: "Radar", price: 1300, quantity: 4 },
+//     { name: "Scanner", price: 2700, quantity: 3 },
+//     { name: "Droid", price: 400, quantity: 7 },
+//     { name: "Grip", price: 1000, quantity: 9 },
+//   ];
   
-  function calculateTotalPrice(productName) {
+//   function calculateTotalPrice(productName) {
  
-    for (const product of products){
-      if (productName === product.name)
-        return product.price * product.quantity;
-    }
-    return 0
-  }
+//     for (const product of products){
+//       if (productName === product.name)
+//         return product.price * product.quantity;
+//     }
+//     return 0
+//   }
   
-console.log(calculateTotalPrice("Grip"));
+// console.log(calculateTotalPrice("Grip"));
+
+// task 30
+
+// function makeTask(data) {
+//   const completed = false;
+//   const category = "General";
+//   const priority = "Normal";
+//   // Change code below this line
+//   const res = {completed, category, priority, ...data};
+// return res;
+//   // Change code above this line
+// }
+// console.log (makeTask({ category: "Homemade", priority: "Low", text: "Take out the trash" }));
+
+// task 31
+// функция add()  принимала любое количество аргументов, считала и возвращала их сумму.
+
+// function add(...args) {
+//   let total = 0;
+
+//   for (const arg of args){
+//     total +=arg;
+//   }
+//   return total;
+// }
+// console.log(add(15, 27));
+
+// task cart Репета
+
+const cart = {
+  items: [],
+  getItems() {
+    return this.items;
+  },
+  add(product) {
+  this.items.push(product);
+  },
+  remove(productName) {
+    for (let i = 0; i < this.items.length; i += 1){
+      const item = this.items[i];
+      
+      if (productName === item.name){
+      return this.items.splice(item.name,1);
+      }
+    }
+  },
+  clear() {},
+  countTotalPrice() {},
+
+};
+
+console.log(cart.getItems());
+
+cart.add({ name: "apple", price: 50});
+cart.add({ name: "lemon", price: 60});
+cart.add({ name: "strawberry", price: 70});
+cart.add({ name: "raspberry", price: 80});
+
+console.table(cart.getItems());
