@@ -177,19 +177,48 @@ const cart = {
     return this.items;
   },
   add(product) {
-  this.items.push(product);
+
+  for ( const item of this.items){
+    if ( item.name === product.name) {
+      item.quantity +=1;
+      return;
+    }
+  }
+
+    const newProduct = {
+      ...product,
+      quantity: 1,
+    };
+  this.items.push(newProduct);
   },
   remove(productName) {
-    for (let i = 0; i < this.items.length; i += 1){
-      const item = this.items[i];
+    // деструктизация, забираем this
+    const {items} = this;
+    for (let i = 0; i < items.length; i += 1){
+      const item = items[i];
       
       if (productName === item.name){
-      return this.items.splice(item.name,1);
+        console.log(i);
+      return items.splice(i,1);
       }
     }
   },
-  clear() {},
-  countTotalPrice() {},
+  clear() {
+    this.items = [];
+  },
+  countTotalPrice() {
+    // destruction
+    const { items } = this;
+   let total = 0;
+
+    for (const { price, quantity } of items)
+  //  for (const item of this.items)
+   {
+    // total += item.price;
+    total += price * quantity;
+   }
+   return total;
+  },
 
 };
 
@@ -199,5 +228,15 @@ cart.add({ name: "apple", price: 50});
 cart.add({ name: "lemon", price: 60});
 cart.add({ name: "strawberry", price: 70});
 cart.add({ name: "raspberry", price: 80});
+cart.add({ name: "strawberry", price: 70});
+cart.add({ name: "lemon", price: 60});
 
 console.table(cart.getItems());
+
+console.log( "TOTAL:", cart.countTotalPrice());
+
+cart.remove("lemon");
+console.table(cart.getItems());
+
+cart.clear();
+console.log(cart.getItems());
