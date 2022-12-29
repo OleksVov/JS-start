@@ -171,72 +171,122 @@
 
 // task cart Репета
 
-const cart = {
-  items: [],
-  getItems() {
-    return this.items;
-  },
-  add(product) {
+// const cart = {
+//   items: [],
+//   getItems() {
+//     return this.items;
+//   },
+//   add(product) {
 
-  for ( const item of this.items){
-    if ( item.name === product.name) {
-      item.quantity +=1;
-      return;
-    }
-  }
+//   for ( const item of this.items){
+//     if ( item.name === product.name) {
+//       item.quantity +=1;
+//       return;
+//     }
+//   }
 
-    const newProduct = {
-      ...product,
-      quantity: 1,
-    };
-  this.items.push(newProduct);
-  },
-  remove(productName) {
-    // деструктизация, забираем this
-    const {items} = this;
-    for (let i = 0; i < items.length; i += 1){
-      const item = items[i];
+//     const newProduct = {
+//       ...product,
+//       quantity: 1,
+//     };
+//   this.items.push(newProduct);
+//   },
+//   remove(productName) {
+//     // деструктизация, забираем this
+//     const {items} = this;
+//     for (let i = 0; i < items.length; i += 1){
+//       const item = items[i];
       
-      if (productName === item.name){
-        console.log(i);
-      return items.splice(i,1);
+//       if (productName === item.name){
+//         console.log(i);
+//       return items.splice(i,1);
+//       }
+//     }
+//   },
+//   clear() {
+//     this.items = [];
+//   },
+//   countTotalPrice() {
+//     // destruction
+//     const { items } = this;
+//    let total = 0;
+
+//     for (const { price, quantity } of items)
+//   //  for (const item of this.items)
+//    {
+//     // total += item.price;
+//     total += price * quantity;
+//    }
+//    return total;
+//   },
+
+// };
+
+// console.log(cart.getItems());
+
+// cart.add({ name: "apple", price: 50});
+// cart.add({ name: "lemon", price: 60});
+// cart.add({ name: "strawberry", price: 70});
+// cart.add({ name: "raspberry", price: 80});
+// cart.add({ name: "strawberry", price: 70});
+// cart.add({ name: "lemon", price: 60});
+
+// console.table(cart.getItems());
+
+// console.log( "TOTAL:", cart.countTotalPrice());
+
+// cart.remove("lemon");
+// console.table(cart.getItems());
+
+// cart.clear();
+// console.log(cart.getItems());
+
+// task 32
+
+// function findMatches(firstArray, ...otherArgs) {
+//   const matches = []; // Don't change this line
+//   for(const arg of otherArgs){
+//     if(firstArray.includes(arg)){
+//       matches.push(arg);
+//     }
+//   }
+//   // Change code above this line
+//   return matches;
+// }
+
+// console.log(findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7));
+
+// task 35
+// метод updateBook(oldName, newName) изменял название книги с oldName на newName в свойстве books.
+
+// const bookShelf = {
+//   books: ["The last kingdom", "Haze", "The guardian of dreams"],
+
+//   updateBook(oldName, newName) {
+// const bookIndex = this.books.indexOf(oldName);
+
+//     return this.books.splice(bookIndex, 1, newName);
+ 
+//   },
+// };
+
+// task 39
+
+const atTheOldToad = {
+  potions: ["Speed potion", "Dragon breath", "Stone skin"],
+  getPotions() {
+    return this.potions;
+  },
+  removePotion(potionName) {
+    // Change code below this line
+    const potions = this.potions;
+    for (const potion of potions) {
+      if( potion === potionName){
+       return potions.splice(potions.indexOf(potion), 1);
       }
     }
   },
-  clear() {
-    this.items = [];
-  },
-  countTotalPrice() {
-    // destruction
-    const { items } = this;
-   let total = 0;
-
-    for (const { price, quantity } of items)
-  //  for (const item of this.items)
-   {
-    // total += item.price;
-    total += price * quantity;
-   }
-   return total;
-  },
-
 };
-
-console.log(cart.getItems());
-
-cart.add({ name: "apple", price: 50});
-cart.add({ name: "lemon", price: 60});
-cart.add({ name: "strawberry", price: 70});
-cart.add({ name: "raspberry", price: 80});
-cart.add({ name: "strawberry", price: 70});
-cart.add({ name: "lemon", price: 60});
-
-console.table(cart.getItems());
-
-console.log( "TOTAL:", cart.countTotalPrice());
-
-cart.remove("lemon");
-console.table(cart.getItems());
-
-cart.clear();
-console.log(cart.getItems());
+console.log(atTheOldToad.getPotions());
+atTheOldToad.removePotion("Dragon breath");
+console.log(atTheOldToad.getPotions());
