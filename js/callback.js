@@ -40,9 +40,12 @@
 // }
 
 // // Перебирающий forEach
+
 // numbers.forEach(function (number, index) {
 //   console.log(`Индекс ${index}, значение ${number}`);
 // });
+
+// method map
 
 // const planets = ["Земля", "Марс", "Венера", "Юпитер"];
 
@@ -177,39 +180,154 @@
 
 // method map
 
-const fruits = [
-   { name: "apple", price: 50, quantity: 40},
-   { name: "lemon", price: 60, quantity: 30},
-   { name: "strawberry", price: 70, quantity: 44}, 
-];
+// const fruits = [
+//    { name: "apple", price: 50, quantity: 40},
+//    { name: "lemon", price: 60, quantity: 30},
+//    { name: "strawberry", price: 70, quantity: 44}, 
+// ];
 
-const updateFruits = fruits.map(fruit => ({ ...fruit,
-price: (fruit.price * 1.1).toFixed(1)}));
+// const updateFruits = fruits.map(fruit => ({ ...fruit,
+// price: (fruit.price * 1.1).toFixed(1)}));
 
-console.table(updateFruits);
+// console.table(updateFruits);
 
-const fruitsName = 'lemon';
-// const updateQuantity = fruits.map(fruit => {
-//   if(fruitsName === fruit.name) {
-//     return { ...fruit, quantity: fruit.quantity + 19}
-//   }
-//   return fruit;
+// const fruitsName = 'lemon';
+// // const updateQuantity = fruits.map(fruit => {
+// //   if(fruitsName === fruit.name) {
+// //     return { ...fruit, quantity: fruit.quantity + 19}
+// //   }
+// //   return fruit;
+// // });
+
+// const updateQuantity = fruits.map(fruit => fruitsName === fruit.name ? { ...fruit, quantity: fruit.quantity + 18} : fruit,
+// );
+
+// console.table(updateQuantity);
+
+// // method filter
+
+// const numbers = [3, 7, 8, 14, 56];
+
+// const filteredNumbers = numbers.filter(number => {
+//   return number > 8 && number < 50;
 // });
+// console.log (filteredNumbers);
 
-const updateQuantity = fruits.map(fruit => fruitsName === fruit.name ? { ...fruit, quantity: fruit.quantity + 18} : fruit,
-);
+// const biggestPrice = fruits.filter(fruit => fruit.price > 60);
 
-console.table(updateQuantity);
+// console.table(biggestPrice);
 
-// method filter
+// // method find
 
-const numbers = [3, 7, 8, 14, 56];
+// const number = numbers.find(number => number === 8);
 
-const filteredNumbers = numbers.filter(number => {
-  return number > 8 && number < 50;
-});
-console.log (filteredNumbers);
+// method reduce
+// calculate the total salary
 
-const biggestPrice = fruits.filter(fruit => fruit.price > 60);
+// const salary = {
+//   mango: 100,
+//   poly: 120,
+//   ajax: 180,
+// };
 
-console.table(biggestPrice);
+// const totalSalary = Object.values(salary).reduce((total, value) => {
+//   return total + value;
+// }, 0);
+// console.log(totalSalary);
+
+// const fruits = [
+//   { name: "apple", price: 50, quantity: 40, description: ['ripe', 'sweet',' red']},
+//   { name: "lemon", price: 60, quantity: 30, description: ['ripe', 'sour', 'yellow']},
+//   { name: "strawberry", price: 70, quantity: 44, description: ['ripe', 'sweet', 'delicious']}, 
+//    ];
+// // total price
+//    const totalQuantityFruit = fruits.reduce((totalQuantity, fruit) => {
+//     return totalQuantity + fruit.quantity;
+//    }, 0);
+
+//   //  const totalPriceFruits = fruits.reduce((totalPrice, fruit) => totalPrice + fruit.price * fruit.quantity, 0);
+//   //  variant writing 
+//   const totalPriceFruits = fruits.reduce((totalPrice, { price, quantity }) => totalPrice + price * quantity, 0);
+
+//    console.log(totalQuantityFruit);
+//    console.log(totalPriceFruits);
+
+//   // total descriptions
+
+//   const totalDescrFruits = fruits.reduce((totalDescription, fruit) => {
+//     // variant writing 1
+
+//     // totalDescription.push(...fruit.description);
+//     // return totalDescription;
+
+//     // variant writing 2
+//     return [...totalDescription, ...fruit.description];
+//   },[]);
+// console.log(totalDescrFruits);
+
+// // статистика 
+
+// const descrStats = totalDescrFruits.reduce((accumulator, description) => {
+//   console.log(accumulator);
+// // variant writing
+
+//   // if(accumulator[description]){
+//   //   accumulator[description] += 1;
+
+//   //   return accumulator;
+//   // }
+//   // accumulator[description] = 1;
+
+//   // return accumulator;
+
+//   // variant writing
+
+//   return {...accumulator,
+//   [description]: accumulator[description] ? accumulator[description] += 1 : 1,};
+// }, {});
+
+// console.log(descrStats);
+
+//  task 11
+
+const filterArray = ((numbers, value) => {
+  const filteredNumbers = [];
+
+numbers.forEach(number => {
+    if (number > value) {
+      filteredNumbers.push(number);
+    }
+  });
+  return filteredNumbers;
+  });
+ console.log(filterArray([1, 2, 3, 4, 5], 3));
+
+//  task 13
+
+ function changeEven(numbers, value) {
+  // Change code below this line
+  // for (let i = 0; i < numbers.length; i += 1) {
+  //   if (numbers[i] % 2 === 0) {
+  //     numbers[i] = numbers[i] + value;
+  //   }
+  // }
+
+  const newArray = [];
+
+  // numbers.forEach(number => {
+  //    if (number % 2 === 0) {
+  //    newArray.push(number + value);
+  //   } else { newArray.push(number);}
+  // });
+  numbers.forEach(number => {
+    number % 2 === 0 ?
+    newArray.push(number + value) : newArray.push(number);
+ });
+
+  return newArray;
+};
+
+console.log(changeEven([44, 13, 81, 92, 36, 54], 100));
+
+
+
