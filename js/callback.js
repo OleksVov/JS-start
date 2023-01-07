@@ -153,24 +153,63 @@
 // console.log(pizzaPalace.order('Big Mike', makePizza, onOrderError));
 // // pizzaPalace.order('Vienna', makePizza, onOrderError);
 
-function filterArray(numbers, value) {
-  const filteredNumbers = [];
-  // Change code below this line
+// function filterArray(numbers, value) {
+//   const filteredNumbers = [];
+//   // Change code below this line
 
-  // for (let i = 0; i < numbers.length; i += 1) {
-  //   if (numbers[i] > value) {
-  //     filteredNumbers.push(numbers[i]);
-  //   }
-  // }
-  numbers.forEach(function (number) {
-    console.log(number);
-    if (number > value) {
-      filteredNumbers.push(number);
-    }
+//   // for (let i = 0; i < numbers.length; i += 1) {
+//   //   if (numbers[i] > value) {
+//   //     filteredNumbers.push(numbers[i]);
+//   //   }
+//   // }
+//   numbers.forEach(function (number) {
+//     console.log(number);
+//     if (number > value) {
+//       filteredNumbers.push(number);
+//     }
     
-  });
+//   });
 
-  // Change code above this line
-  return filteredNumbers;
-};
-console.log(filterArray([1, 2, 3, 4, 5], 3));
+//   // Change code above this line
+//   return filteredNumbers;
+// };
+// console.log(filterArray([1, 2, 3, 4, 5], 3));
+
+// method map
+
+const fruits = [
+   { name: "apple", price: 50, quantity: 40},
+   { name: "lemon", price: 60, quantity: 30},
+   { name: "strawberry", price: 70, quantity: 44}, 
+];
+
+const updateFruits = fruits.map(fruit => ({ ...fruit,
+price: (fruit.price * 1.1).toFixed(1)}));
+
+console.table(updateFruits);
+
+const fruitsName = 'lemon';
+// const updateQuantity = fruits.map(fruit => {
+//   if(fruitsName === fruit.name) {
+//     return { ...fruit, quantity: fruit.quantity + 19}
+//   }
+//   return fruit;
+// });
+
+const updateQuantity = fruits.map(fruit => fruitsName === fruit.name ? { ...fruit, quantity: fruit.quantity + 18} : fruit,
+);
+
+console.table(updateQuantity);
+
+// method filter
+
+const numbers = [3, 7, 8, 14, 56];
+
+const filteredNumbers = numbers.filter(number => {
+  return number > 8 && number < 50;
+});
+console.log (filteredNumbers);
+
+const biggestPrice = fruits.filter(fruit => fruit.price > 60);
+
+console.table(biggestPrice);
