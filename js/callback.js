@@ -235,17 +235,17 @@
 // }, 0);
 // console.log(totalSalary);
 
-// const fruits = [
-//   { name: "apple", price: 50, quantity: 40, description: ['ripe', 'sweet',' red']},
-//   { name: "lemon", price: 60, quantity: 30, description: ['ripe', 'sour', 'yellow']},
-//   { name: "strawberry", price: 70, quantity: 44, description: ['ripe', 'sweet', 'delicious']}, 
-//    ];
+const fruits = [
+  { name: "apple", price: 50, quantity: 40, description: ['ripe', 'sweet',' red']},
+  { name: "lemon", price: 60, quantity: 30, description: ['ripe', 'sour', 'yellow']},
+  { name: "strawberry", price: 70, quantity: 44, description: ['ripe', 'sweet', 'delicious']}, 
+   ];
 // // total price
 //    const totalQuantityFruit = fruits.reduce((totalQuantity, fruit) => {
 //     return totalQuantity + fruit.quantity;
 //    }, 0);
 
-//   //  const totalPriceFruits = fruits.reduce((totalPrice, fruit) => totalPrice + fruit.price * fruit.quantity, 0);
+//    const totalPriceFruits = fruits.reduce((totalPrice, fruit) => totalPrice + fruit.price * fruit.quantity, 0);
 //   //  variant writing 
 //   const totalPriceFruits = fruits.reduce((totalPrice, { price, quantity }) => totalPrice + price * quantity, 0);
 
@@ -255,79 +255,155 @@
 //   // total descriptions
 
 //   const totalDescrFruits = fruits.reduce((totalDescription, fruit) => {
-//     // variant writing 1
+// //     // variant writing 1
 
 //     // totalDescription.push(...fruit.description);
 //     // return totalDescription;
 
-//     // variant writing 2
+// //     // variant writing 2
 //     return [...totalDescription, ...fruit.description];
 //   },[]);
 // console.log(totalDescrFruits);
 
-// // статистика 
+// // // статистика 
 
 // const descrStats = totalDescrFruits.reduce((accumulator, description) => {
 //   console.log(accumulator);
-// // variant writing
+// // // variant writing
 
-//   // if(accumulator[description]){
-//   //   accumulator[description] += 1;
+//   if(accumulator[description]){
+//     accumulator[description] += 1;
 
-//   //   return accumulator;
-//   // }
-//   // accumulator[description] = 1;
+//     return accumulator;
+//   }
+//   accumulator[description] = 1;
 
-//   // return accumulator;
+//   return accumulator;
 
-//   // variant writing
+// //   // variant writing
 
-//   return {...accumulator,
-//   [description]: accumulator[description] ? accumulator[description] += 1 : 1,};
+// //   return {...accumulator,
+// //   [description]: accumulator[description] ? accumulator[description] += 1 : 1,};
 // }, {});
 
 // console.log(descrStats);
 
 //  task 11
 
-const filterArray = ((numbers, value) => {
-  const filteredNumbers = [];
+// const filterArray = ((numbers, value) => {
+//   const filteredNumbers = [];
 
-numbers.forEach(number => {
-    if (number > value) {
-      filteredNumbers.push(number);
-    }
-  });
-  return filteredNumbers;
-  });
- console.log(filterArray([1, 2, 3, 4, 5], 3));
+// numbers.forEach(number => {
+//     if (number > value) {
+//       filteredNumbers.push(number);
+//     }
+//   });
+//   return filteredNumbers;
+//   });
+//  console.log(filterArray([1, 2, 3, 4, 5], 3));
 
 //  task 13
 
- function changeEven(numbers, value) {
-  // Change code below this line
-  // for (let i = 0; i < numbers.length; i += 1) {
-  //   if (numbers[i] % 2 === 0) {
-  //     numbers[i] = numbers[i] + value;
-  //   }
-  // }
+//  function changeEven(numbers, value) {
+//   // Change code below this line
+//   // for (let i = 0; i < numbers.length; i += 1) {
+//   //   if (numbers[i] % 2 === 0) {
+//   //     numbers[i] = numbers[i] + value;
+//   //   }
+//   // }
 
-  const newArray = [];
+//   const newArray = [];
 
-  // numbers.forEach(number => {
-  //    if (number % 2 === 0) {
-  //    newArray.push(number + value);
-  //   } else { newArray.push(number);}
-  // });
-  numbers.forEach(number => {
-    number % 2 === 0 ?
-    newArray.push(number + value) : newArray.push(number);
- });
+//   // numbers.forEach(number => {
+//   //    if (number % 2 === 0) {
+//   //    newArray.push(number + value);
+//   //   } else { newArray.push(number);}
+//   // });
+//   numbers.forEach(number => {
+//     number % 2 === 0 ?
+//     newArray.push(number + value) : newArray.push(number);
+//  });
 
-  return newArray;
+//   return newArray;
+// };
+
+// console.log(changeEven([44, 13, 81, 92, 36, 54], 100));
+
+// task 24
+
+const users = 
+[
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male",
+    age: 37
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female",
+    age: 34
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    gender: "male",
+    age: 24
+  },
+];
+
+  
+
+  // const getUsersWithAge = (users, minAge, maxAge) => {
+  //   return users.filter(user => user.age > minAge && user.age < 
+  //  maxAge)
+  //   };
+
+  //   console.log(getUsersWithAge(users,'30', '36'));
+
+// const getUsersWithFriend = (users, friendName) => {
+
+//   return users.filter(user => user.friends.includes(friendName))
+// };
+
+// console.log(getUsersWithFriend(users,"Sharron Pace"));
+
+// const getFriends = (users) => {
+//  const allFriends = users.flatMap(user => user.friends);
+//  return allFriends.filter((friend, index, array) => array.indexOf(friend) === index
+//  );
+
+// };
+// console.log(getFriends(users));
+
+//  task 37
+
+// const getTotalFriendCount = users => {
+//   const totalFriends =  users.reduce((acc, user) => {
+//     acc.push(...user.friends);
+//     return acc;
+//    }, []);
+//    return totalFriends.length;
+// };
+// console.log(getTotalFriendCount(users));
+
+const sortByDescendingFriendCount = users => {
+
+  return [...users].sort((firstUser, secondUser) => secondUser.friends.length - firstUser.friends.length );
+
 };
 
-console.log(changeEven([44, 13, 81, 92, 36, 54], 100));
-
-
-
+console.table(sortByDescendingFriendCount(users));
