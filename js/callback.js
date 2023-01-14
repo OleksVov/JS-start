@@ -331,79 +331,79 @@ const fruits = [
 
 // task 24
 
-const users = 
-[
-  {
-    name: "Moore Hensley",
-    email: "moorehensley@indexia.com",
-    eyeColor: "blue",
-    friends: ["Sharron Pace"],
-    isActive: false,
-    balance: 2811,
-    gender: "male",
-    age: 37
-  },
-  {
-    name: "Sharlene Bush",
-    email: "sharlenebush@tubesys.com",
-    eyeColor: "blue",
-    friends: ["Briana Decker", "Sharron Pace"],
-    isActive: true,
-    balance: 3821,
-    gender: "female",
-    age: 34
-  },
-  {
-    name: "Ross Vazquez",
-    email: "rossvazquez@xinware.com",
-    eyeColor: "green",
-    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
-    isActive: false,
-    balance: 3793,
-    gender: "male",
-    age: 24
-  },
-];
+// const users = 
+// [
+//   {
+//     name: "Moore Hensley",
+//     email: "moorehensley@indexia.com",
+//     eyeColor: "blue",
+//     friends: ["Sharron Pace"],
+//     isActive: false,
+//     balance: 2811,
+//     gender: "male",
+//     age: 37
+//   },
+//   {
+//     name: "Sharlene Bush",
+//     email: "sharlenebush@tubesys.com",
+//     eyeColor: "blue",
+//     friends: ["Briana Decker", "Sharron Pace"],
+//     isActive: true,
+//     balance: 3821,
+//     gender: "female",
+//     age: 34
+//   },
+//   {
+//     name: "Ross Vazquez",
+//     email: "rossvazquez@xinware.com",
+//     eyeColor: "green",
+//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//     isActive: false,
+//     balance: 3793,
+//     gender: "male",
+//     age: 24
+//   },
+// ];
 
   
 
-  // const getUsersWithAge = (users, minAge, maxAge) => {
-  //   return users.filter(user => user.age > minAge && user.age < 
-  //  maxAge)
-  //   };
+//   // const getUsersWithAge = (users, minAge, maxAge) => {
+//   //   return users.filter(user => user.age > minAge && user.age < 
+//   //  maxAge)
+//   //   };
 
-  //   console.log(getUsersWithAge(users,'30', '36'));
+//   //   console.log(getUsersWithAge(users,'30', '36'));
 
-// const getUsersWithFriend = (users, friendName) => {
+// // const getUsersWithFriend = (users, friendName) => {
 
-//   return users.filter(user => user.friends.includes(friendName))
-// };
+// //   return users.filter(user => user.friends.includes(friendName))
+// // };
 
-// console.log(getUsersWithFriend(users,"Sharron Pace"));
+// // console.log(getUsersWithFriend(users,"Sharron Pace"));
 
-// const getFriends = (users) => {
-//  const allFriends = users.flatMap(user => user.friends);
-//  return allFriends.filter((friend, index, array) => array.indexOf(friend) === index
-//  );
+// // const getFriends = (users) => {
+// //  const allFriends = users.flatMap(user => user.friends);
+// //  return allFriends.filter((friend, index, array) => array.indexOf(friend) === index
+// //  );
 
-// };
-// console.log(getFriends(users));
+// // };
+// // console.log(getFriends(users));
 
-//  task 37
+// //  task 37
 
-// const getTotalFriendCount = users => {
-//   const totalFriends =  users.reduce((acc, user) => {
-//     acc.push(...user.friends);
-//     return acc;
-//    }, []);
-//    return totalFriends.length;
-// };
-// console.log(getTotalFriendCount(users));
+// // const getTotalFriendCount = users => {
+// //   const totalFriends =  users.reduce((acc, user) => {
+// //     acc.push(...user.friends);
+// //     return acc;
+// //    }, []);
+// //    return totalFriends.length;
+// // };
+// // console.log(getTotalFriendCount(users));
 
-const sortByDescendingFriendCount = users => {
+// // const sortByDescendingFriendCount = users => {
 
-  return [...users].sort((firstUser, secondUser) => secondUser.friends.length - firstUser.friends.length );
+// //   return [...users].sort((firstUser, secondUser) => secondUser.friends.length - firstUser.friends.length );
 
-};
+// // };
 
-console.table(sortByDescendingFriendCount(users));
+// // console.table(sortByDescendingFriendCount(users));
